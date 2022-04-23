@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Parallax Scrolling Effext</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Utiva</a>
+      <ul class="headList">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <section>
+      <img src="assets/stars.png" id="stars" />
+      <img src="assets/moon.png" id="moon" />
+      <img src="assets/mountains_behind.png" id="mountains_behind" />
+      <h2 id="text">Moon Light</h2>
+      <a href="#sec" id="btn">Explore</a>
+      <img src="assets/mountains_front.png" id="mountains_front" />
+    </section>
+
+    <div class="sec" id="sec">
+      <h2>Learning Parallax Scrolling Effect</h2>
+      <p>
+        Parallax scrolling, which creates a sense of depth on your site, is
+        powerful because it is so engaging. When looking through websites making
+        use of this design effect, it's hard not to be inspired to implement it
+        on your own website.<br /><br />
+      </p>
+
+      <p>
+        By using Cascading Style Sheets (CSS) — the coding language used to
+        enhance the appearance of your website — you can create engaging,
+        scrolling features that can help to tell the story of your brand.
+        <br /><br />
+      </p>
+      <h2>What is Parallel Scrolling Effect?</h2>
+      <p>
+        Parallax scrolling is a visual effect where the background of a web page
+        appears to stay still while the foreground shifts vertically or
+        horizontally. Parallax scrolling is used to add visual interest to a
+        website and engage users as they scroll through a web page.
+        <br /><br />
+      </p>
+      <p>
+        In a parallax scrolling effect, both the foreground and background are
+        moving, but the background typically moves much more slowly, giving the
+        illusion of depth. Done correctly, parallax scrolling produces a
+        fascinating and seamless virtual experience.<br /><br />
+      </p>
+
+      <p>
+        Though there are several approaches to achieving a parallax scrolling
+        effect, making the background move slower than the foreground is the
+        most popular. A slower moving background embodies the same type of
+        feeling as when you are inside a moving vehicle looking out: the sky and
+        clouds in the background appear to move at a slower pace than the trees
+        and houses in the foreground. Let’s take a look at this effect in play.
+        <br /><br />
+      </p>
+    </div>
+
+    <script>
+      let stars = document.getElementById("stars");
+      let moon = document.getElementById("moon");
+      let mountains_behind = document.getElementById("mountains_behind");
+      let text = document.getElementById("text");
+      let btn = document.getElementById("btn");
+      let mountains_front = document.getElementById("mountains_front");
+
+      window.addEventListener("scroll", function () {
+        let value = window.scrollY;
+        stars.style.left = value * 0.25 + "px";
+        moon.style.top = value * 1.05 + "px";
+        mountains_behind.style.top = value * 0.5 + "px";
+        mountains_front.style.top = value * 0 + "px";
+        text.style.marginRight = value * 4 + "px";
+        text.style.marginTop = value * 1.5 + "px";
+        btn.style.marginTop = value * 1.5 + "px";
+        header.style.top = value * 0.5 + "px";
+      });
+    </script>
+  </body>
+</html>
